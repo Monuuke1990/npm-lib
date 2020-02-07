@@ -1,20 +1,78 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import classNames from 'classnames';
+
+import PropTypes from 'prop-types';
 
 import styles from './styles.css'
-
-export default class button extends Component {
-  static propTypes = {
-    text: PropTypes.string
-  }
-
+class Button extends Component {
   render() {
     const {
-      text
-    } = this.props
+      children,
+      type,
+      size,
+      className,
+      href,
+      icon,
+      iconAlignment,
+      theme,
+      flat,
+      bordered,
+      borderless,
+      iconButton,
+      disabled,
+      ...others
+    } = this.props;
+   
+ const buttonProps = {
+      ref: (node) => {
+        this.buttonNode = node;
+      },
+     
+    };
+   
 
+   
     return (
-      <button className={styles.btnprimary}>Primary</button>
-    )
+     
+        <button  className={className}>
+                   {children}
+        </button>
+     
+    );
   }
 }
+
+Button.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  type: PropTypes.string,
+  size: PropTypes.string,
+  className: PropTypes.string,
+  href: PropTypes.string,
+  icon: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  iconAlignment: PropTypes.string,
+  theme: PropTypes.shape({}),
+  disabled: PropTypes.bool,
+  flat: PropTypes.bool,
+  bordered: PropTypes.bool,
+  borderless: PropTypes.bool,
+  onClick: PropTypes.func,
+  iconButton: PropTypes.bool,
+};
+
+Button.defaultProps = {
+  children: null,
+  type: 'primary',
+  size: 'small',
+  className: '',
+  href: '',
+  icon: null,
+  iconAlignment: 'left',
+  theme: {},
+  disabled: false,
+  flat: false,
+  bordered: false,
+  borderless: false,
+  onClick: null,
+  iconButton: false,
+};
+export default Button;

@@ -6,7 +6,7 @@ export default class App extends Component {
   render () {
     return (
       <div>
-        <Button> </Button> 
+      <Button className="primary" type="text">Primary</Button>
 
       </div>
     )

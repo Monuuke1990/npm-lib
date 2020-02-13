@@ -5,9 +5,9 @@ body {
 }
 
 .primary{
-  background: red;
+  background: #000;
   height: 30px;
   width: 150px;
-  border: 1px solid red;
+  border: 1px solid #000;
   color: #fff;
 }

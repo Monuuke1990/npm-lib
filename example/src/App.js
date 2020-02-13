@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import './index.css'
 import Button from 'deign-lib'
 
 export default class App extends Component {
